@@ -173,3 +173,16 @@
   .btn { padding: 9px 14px; font-size: 13px; width: 100%; justify-content: center; }
   .cta-strip { gap: 12px; }
 }
+
+/* ── Welcome page footer note ── */
+.welcome-footer {
+  margin-top: 32px !important;
+  padding-top: 16px;
+  border-top: 1px solid #dde6e8;
+  font-size: 12px !important;
+  color: var(--text-muted) !important;
+}
+
+.welcome-footer a:hover {
+  color: var(--text-dim);
+}
