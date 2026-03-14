@@ -6,9 +6,22 @@
   <title>FHRD timeline 404</title>
 
   <link rel="stylesheet" href="assets/base.css" />
+  <link rel="stylesheet" href="assets/sidebar.css" />
+  <link rel="stylesheet" href="assets/topbar.css" />
   <link rel="stylesheet" href="assets/page.css" />
 </head>
 <body>
-    <h1>404</h1>
-    <p>Page not found</p>
+  <frhd-sidebar active="none" root="."></frhd-sidebar>
+
+  <div id="main">
+    <frhd-topbar page="404"></frhd-topbar>
+
+    <main id="page-content">
+      <h1>404</h1>
+      <p>Page not found</p>
+    </main>
+  </div>
+
+  <script src="components/frhd-sidebar.js"></script>
+  <script src="components/frhd-topbar.js"></script>
 </body>
