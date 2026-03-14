@@ -1,0 +1,49 @@
+/* =========================================
+   base.css — variables, reset, typography
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg:            #ffffff;
+  --bg-sidebar:    #225264;
+  --bg-panel:      #f4f6f7;
+  --bg-hover:      #1d4555;
+  --border:        #1a3f4e;
+  --accent:        #95b6bf;
+  --accent-glow:   rgba(149, 182, 191, 0.15);
+  --text:          #222222;
+  --text-muted:    #aec8cf;
+  --text-dim:      #444444;
+  --text-sidebar:  #d8eaed;
+  --sidebar-w:     230px;
+  --header-h:      52px;
+  --radius:        4px;
+  --transition:    0.15s ease;
+  --font:          'Nunito', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a {
+  color: #4fa8d8;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: #2a88c0; text-decoration: underline; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #c8d8db; border-radius: 3px; }

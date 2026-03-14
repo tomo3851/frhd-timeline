@@ -1,0 +1,239 @@
+/* =========================================
+   timeline.css — year page layout
+   ========================================= */
+
+/* ── Month heading ── */
+.tl-month {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--bg-sidebar);
+  margin: 40px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #dde6e8;
+  letter-spacing: 0.01em;
+}
+
+.tl-month:first-of-type {
+  margin-top: 0;
+}
+
+/* ── Entry list ── */
+.tl-entries {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Single entry ──
+   Layout: [date 48px] [dot+line 24px] [body 1fr]
+*/
+.tl-entry {
+  display: grid;
+  grid-template-columns: 48px 24px 1fr;
+  gap: 0 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef1f2;
+  position: relative;
+}
+
+.tl-entry:last-child {
+  border-bottom: none;
+}
+
+/* Vertical connector line through the dot column */
+.tl-entry::before {
+  content: '';
+  position: absolute;
+  /* centre of the dot column: 48px date + 12px (half of 24px dot col) */
+  left: 60px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dde6e8;
+  z-index: 0;
+}
+
+.tl-entry:first-child::before { top: 18px; }
+.tl-entry:last-child::before  { bottom: calc(100% - 18px); }
+
+/* ── Date column (left of dot) ── */
+.tl-date {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;   /* right-align text toward the dot */
+  padding-top: 12px;
+  padding-right: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.tl-date-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* ── Dot column ── */
+.tl-dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.tl-date-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+  outline: 2px solid var(--bg-sidebar);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Entry body ── */
+.tl-body {
+  padding: 6px 0 4px 14px;
+  min-width: 0;
+}
+
+.tl-text {
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: var(--text-dim);
+}
+
+.tl-text a {
+  color: var(--bg-sidebar);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tl-text a:hover {
+  color: #1d4555;
+  text-decoration: underline;
+}
+
+.tl-text a strong {
+  color: inherit;
+}
+
+.tl-text strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ── Notable entry highlight ── */
+.tl-entry.notable .tl-date-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--bg-sidebar);
+  outline-color: var(--accent);
+}
+
+.tl-entry.notable .tl-date-text {
+  color: var(--bg-sidebar);
+}
+
+.tl-entry.notable .tl-text {
+  background: var(--bg-panel);
+  border-left: 3px solid var(--bg-sidebar);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 14px;
+}
+
+/* ── Track embed ── */
+frhd-track {
+  display: block;
+  margin-top: 10px;
+}
+
+.frhd-track-embed {
+  position: relative;
+  display: inline-block;
+  border: 2px solid #ccd8db;
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 540px;
+  width: 100%;
+  text-decoration: none !important;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.frhd-track-embed:hover {
+  border-color: var(--bg-sidebar);
+  box-shadow: 0 3px 12px rgba(34, 82, 100, 0.18);
+  text-decoration: none !important;
+}
+
+.frhd-track-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 60px;
+  background: #d0dfe3;
+}
+
+.frhd-track-logo {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 100px;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+}
+
+.frhd-track-play {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(34, 82, 100, 0.72);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font);
+  padding: 5px 12px;
+  text-align: center;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.frhd-track-embed:hover .frhd-track-play {
+  opacity: 1;
+}
+
+/* ── Separator rule between blocks of entries ── */
+.tl-separator {
+  height: 1px;
+  background: #d0dfe3;
+  margin: 8px 0;
+  border: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .tl-entry {
+    grid-template-columns: 40px 20px 1fr;
+  }
+
+  .tl-entry::before { left: 50px; }
+
+  .tl-date-text { font-size: 10px; }
+  .tl-text { font-size: 13px; }
+
+  .frhd-track-logo { width: 72px; top: 7px; left: 10px; }
+
+  .tl-entry.notable .tl-text { padding: 8px 10px; }
+}

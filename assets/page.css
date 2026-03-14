@@ -1,0 +1,175 @@
+/* =========================================
+   page.css — main layout + page content
+   ========================================= */
+
+/* ── Layout shell ── */
+#main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+#page-content {
+  padding: 36px 40px 72px;
+  max-width: 820px;
+  width: 100%;
+}
+
+/* ── Page heading ── */
+.page-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #dde6e8;
+  line-height: 1.25;
+}
+.page-title .highlight { color: var(--bg-sidebar); }
+
+/* ── Body text ── */
+.welcome-body p {
+  font-size: 14px;
+  line-height: 1.78;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+}
+.welcome-body strong { color: var(--text); font-weight: 700; }
+.welcome-body a { color: #4fa8d8; text-decoration: none; }
+.welcome-body a:hover { color: #2a88c0; text-decoration: underline; }
+.welcome-body a strong { color: inherit; }
+
+/* ── Info box ── */
+.info-box {
+  background: var(--bg-panel);
+  border: 1px solid #dde6e8;
+  border-top: 3px solid var(--bg-sidebar);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+.info-box h2 {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--bg-sidebar);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.info-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.info-box ul li {
+  display: block;
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.65;
+  padding-left: 18px;
+  position: relative;
+}
+.info-box ul li::before {
+  content: '▸';
+  color: var(--bg-sidebar);
+  font-size: 11px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+.info-box ul li strong { color: var(--text); }
+.info-box ul li code {
+  background: #e0eaec;
+  border: 1px solid #c8d8db;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  color: var(--bg-sidebar);
+}
+
+/* ── CTA strip ── */
+.cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--bg-panel);
+  border: 1px solid #dde6e8;
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  margin-top: 22px;
+}
+.cta-strip p {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  margin: 0 !important;
+}
+.cta-strip strong { color: var(--text); }
+
+/* ── Button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: filter var(--transition), transform var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.btn-green {
+  background: var(--bg-sidebar);
+  color: #fff !important;
+}
+.btn-green:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* ── Placeholder (empty year pages) ── */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  text-align: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+.placeholder .ph-icon { font-size: 34px; opacity: 0.25; }
+.placeholder h2 { font-size: 16px; font-weight: 700; color: var(--text-dim); }
+.placeholder p { font-size: 13px; max-width: 280px; line-height: 1.6; }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  #page-content { padding: 28px 28px 60px; }
+  .page-title { font-size: 21px; }
+}
+
+@media (max-width: 680px) {
+  #main { margin-left: 0; }
+  #page-content { padding: 22px 18px 56px; }
+  .page-title { font-size: 19px; }
+  .cta-strip { flex-direction: column; align-items: flex-start; }
+  .info-box { padding: 14px 16px; }
+}
+
+@media (max-width: 420px) {
+  #page-content { padding: 18px 14px 52px; }
+  .page-title { font-size: 17px; }
+  .welcome-body p { font-size: 13.5px; }
+  .info-box ul li { font-size: 13px; }
+  .btn { padding: 9px 14px; font-size: 13px; width: 100%; justify-content: center; }
+  .cta-strip { gap: 12px; }
+}

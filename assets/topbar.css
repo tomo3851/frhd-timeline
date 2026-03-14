@@ -1,0 +1,67 @@
+/* =========================================
+   topbar.css — sticky top navigation bar
+   ========================================= */
+
+frhd-topbar {
+  display: block;
+  position: sticky;
+  top: 0;
+  height: var(--header-h);
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 28px;
+  gap: 14px;
+}
+
+/* ── Hamburger ── */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius);
+  color: #fff;
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+#menu-toggle:hover { background: var(--bg-hover); }
+#menu-toggle svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  font-size: 12.5px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.breadcrumb strong {
+  color: #ffffff;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.breadcrumb .sep { color: var(--accent); }
+
+/* ── Responsive ── */
+@media (max-width: 680px) {
+  #menu-toggle { display: flex; }
+  .topbar-inner { padding: 0 16px; }
+}

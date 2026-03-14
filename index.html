@@ -4,78 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Rider HD Timeline 2013–2026</title>
-  <link rel="stylesheet" href="assets/style.css" />
+
+  <link rel="stylesheet" href="assets/base.css" />
+  <link rel="stylesheet" href="assets/sidebar.css" />
+  <link rel="stylesheet" href="assets/topbar.css" />
+  <link rel="stylesheet" href="assets/page.css" />
 </head>
 <body>
 
-  <!-- ══ SIDEBAR OVERLAY (mobile backdrop) ══ -->
-  <div id="sidebar-overlay"></div>
+  <frhd-sidebar active="welcome" root="."></frhd-sidebar>
 
-  <!-- ══ SIDEBAR ══ -->
-  <aside id="sidebar">
-
-    <a class="sidebar-logo" href="index.html">
-      <div class="logo-badge">FRHD</div>
-      <div class="logo-label">
-        Timeline
-        <small>2013 – 2026</small>
-      </div>
-    </a>
-
-    <!-- General -->
-    <div class="sidebar-section">
-      <div class="sidebar-label">General</div>
-      <ul class="sidebar-nav">
-        <li><a href="index.html" class="active"><span class="icon">🏠</span> Welcome!</a></li>
-        <li><a href="#"><span class="icon">❓</span> FAQs</a></li>
-        <li><a href="#"><span class="icon">📊</span> Statistics</a></li>
-        <li><a href="#"><span class="icon">📋</span> Contributors List</a></li>
-        <li><a href="#"><span class="icon">🎭</span> FRHD Eras</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-divider"></div>
-
-    <!-- Timeline years -->
-    <div class="sidebar-section">
-      <div class="sidebar-label">Timeline</div>
-      <ul class="sidebar-nav years">
-        <li><a href="#"><span class="icon">📄</span> 2013</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2014</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2015</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2016</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2017</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2018</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2019</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2020</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2021</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2022</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2023</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2024</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2025</a></li>
-        <li><a href="#"><span class="icon">📄</span> 2026</a></li>
-      </ul>
-    </div>
-
-  </aside>
-
-  <!-- ══ MAIN ══ -->
   <div id="main">
-
-    <header id="topbar">
-      <!-- Hamburger — visible only on mobile -->
-      <button id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="2" y1="5"  x2="18" y2="5"  />
-          <line x1="2" y1="10" x2="18" y2="10" />
-          <line x1="2" y1="15" x2="18" y2="15" />
-        </svg>
-      </button>
-
-      <div class="breadcrumb">
-        FRHD Timeline <span class="sep">›</span> <strong>Welcome!</strong>
-      </div>
-    </header>
+    <frhd-topbar page="Welcome!"></frhd-topbar>
 
     <main id="page-content">
 
@@ -127,45 +67,8 @@
     </main>
   </div>
 
-  <script>
-    const sidebar  = document.getElementById('sidebar');
-    const overlay  = document.getElementById('sidebar-overlay');
-    const toggle   = document.getElementById('menu-toggle');
-
-    function openSidebar() {
-      sidebar.classList.add('open');
-      overlay.classList.add('visible');
-      toggle.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden'; // prevent background scroll
-    }
-
-    function closeSidebar() {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('visible');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
-    toggle.addEventListener('click', () => {
-      sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
-    });
-
-    overlay.addEventListener('click', closeSidebar);
-
-    // Close drawer when a nav link is tapped on mobile
-    sidebar.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 680) closeSidebar();
-      });
-    });
-
-    // On resize back to desktop, reset any mobile state
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 680) {
-        closeSidebar();
-      }
-    });
-  </script>
+  <script src="components/frhd-sidebar.js"></script>
+  <script src="components/frhd-topbar.js"></script>
 
 </body>
 </html>
