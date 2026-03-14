@@ -10,11 +10,11 @@
  */
 
 const GENERAL_ITEMS = [
-  { key: 'welcome',      icon: '🏠', label: 'Welcome!',          href: 'index.html' },
-  { key: 'faqs',         icon: '❓', label: 'FAQs',              href: 'faqs.html' },
-  { key: 'statistics',   icon: '📊', label: 'Statistics',        href: 'statistics.html' },
-  { key: 'contributors', icon: '📋', label: 'Contributors List', href: 'contributors.html' },
-  { key: 'eras',         icon: '🎭', label: 'FRHD Eras',         href: 'eras.html' },
+  { key: 'welcome',      icon: '🏠', label: 'Welcome!',          href: '' },
+  { key: 'faqs',         icon: '❓', label: 'FAQs',              href: 'faqs' },
+  { key: 'statistics',   icon: '📊', label: 'Statistics',        href: 'statistics' },
+  { key: 'contributors', icon: '📋', label: 'Contributors List', href: 'contributors' },
+  { key: 'eras',         icon: '🎭', label: 'FRHD Eras',         href: 'eras' },
 ];
 
 const YEARS = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
@@ -24,7 +24,7 @@ class FrhdSidebar extends HTMLElement {
   connectedCallback() {
     const active = this.getAttribute('active') ?? 'welcome';
     // root defaults to '.' (same directory = root-level page)
-    const root   = (this.getAttribute('root') ?? '.').replace(/\/$/, '');
+    const root = (this.getAttribute('root') ?? '.').replace(/\/$/, '');
 
     const generalLinks = GENERAL_ITEMS.map(item => {
       const isActive = item.key === active;
@@ -40,7 +40,7 @@ class FrhdSidebar extends HTMLElement {
       const isActive = String(year) === String(active);
       return `
         <li>
-          <a href="${root}/timeline/${year}.html"${isActive ? ' class="active"' : ''}>
+          <a href="${root}/timeline/${year}"${isActive ? ' class="active"' : ''}>
             <span class="icon">📄</span> ${year}
           </a>
         </li>`;
