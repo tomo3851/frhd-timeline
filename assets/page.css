@@ -31,16 +31,16 @@
 .page-title .highlight { color: var(--bg-sidebar); }
 
 /* ── Body text ── */
-.welcome-body p {
+.page-body p {
   font-size: 14px;
   line-height: 1.78;
   color: var(--text-dim);
   margin-bottom: 14px;
 }
-.welcome-body strong { color: var(--text); font-weight: 700; }
-.welcome-body a { color: #4fa8d8; text-decoration: none; }
-.welcome-body a:hover { color: #2a88c0; text-decoration: underline; }
-.welcome-body a strong { color: inherit; }
+.page-body strong { color: var(--text); font-weight: 700; }
+.page-body a { color: #4fa8d8; text-decoration: none; }
+.page-body a:hover { color: #2a88c0; text-decoration: underline; }
+.page-body a strong { color: inherit; }
 
 /* ── Info box ── */
 .info-box {
@@ -136,20 +136,18 @@
   transform: translateY(-1px);
 }
 
-/* ── Placeholder (empty year pages) ── */
-.placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 260px;
-  text-align: center;
-  gap: 10px;
-  color: var(--text-muted);
+/* ── footer note ── */
+.footer {
+  margin-top: 32px !important;
+  padding-top: 16px;
+  border-top: 1px solid #dde6e8;
+  font-size: 12px !important;
+  color: var(--text-muted) !important;
 }
-.placeholder .ph-icon { font-size: 34px; opacity: 0.25; }
-.placeholder h2 { font-size: 16px; font-weight: 700; color: var(--text-dim); }
-.placeholder p { font-size: 13px; max-width: 280px; line-height: 1.6; }
+
+.footer a:hover {
+  color: var(--text-dim);
+}
 
 /* ── Responsive ── */
 @media (max-width: 860px) {
@@ -172,17 +170,4 @@
   .info-box ul li { font-size: 13px; }
   .btn { padding: 9px 14px; font-size: 13px; width: 100%; justify-content: center; }
   .cta-strip { gap: 12px; }
-}
-
-/* ── Welcome page footer note ── */
-.welcome-footer {
-  margin-top: 32px !important;
-  padding-top: 16px;
-  border-top: 1px solid #dde6e8;
-  font-size: 12px !important;
-  color: var(--text-muted) !important;
-}
-
-.welcome-footer a:hover {
-  color: var(--text-dim);
 }
