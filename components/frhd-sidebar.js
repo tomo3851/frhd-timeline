@@ -14,7 +14,7 @@ const GENERAL_ITEMS = [
   { key: 'faqs',         icon: '❓', label: 'FAQs',              href: 'faqs' },
   { key: 'statistics',   icon: '📊', label: 'Statistics',        href: 'statistics' },
   { key: 'contributors', icon: '📋', label: 'Contributors List', href: 'contributors' },
-  { key: 'eras',         icon: '🎭', label: 'FRHD Eras',         href: 'eras' },
+  { key: 'eras',         icon: '🕰️', label: 'FRHD Eras',         href: 'eras' },
 ];
 
 const YEARS = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
