@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FRHD Eras - FRHD timeline</title>
+
+  <link rel="stylesheet" href="../assets/base.css" />
+  <link rel="stylesheet" href="../assets/sidebar.css" />
+  <link rel="stylesheet" href="../assets/topbar.css" />
+  <link rel="stylesheet" href="../assets/page.css" />
+  <link rel="stylesheet" href="../timeline/assets/timeline.css" />
+
+  <style>
+    .era-list {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 1.5rem;
+      border-left: 3px solid rgba(128, 128, 128, 0.3);
+    }
+
+    .era {
+      position: relative;
+      margin: 0 0 1.5rem;
+      padding: 0.25rem 0 0.25rem 1rem;
+    }
+
+    /* Coloured marker on the vertical line */
+    .era::before {
+      content: "";
+      position: absolute;
+      left: calc(-1.5rem - 9px);
+      top: 0.9rem;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--era-color);
+      border: 3px solid var(--era-color);
+      box-sizing: content-box;
+    }
+
+    .era .tl-month {
+      margin-top: 0;
+    }
+
+    .era-dates {
+      margin: 0 0 0.6rem;
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    .era-present {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: #fff;
+      background: var(--era-color);
+      vertical-align: middle;
+    }
+
+    .era-events {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .era-event {
+      padding: 0.6rem 0.8rem;
+      border-left: 4px solid var(--era-color);
+      border-radius: 4px;
+      background: rgba(128, 128, 128, 0.1);
+    }
+
+    .era-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.7;
+      margin-bottom: 0.15rem;
+    }
+
+    @media (max-width: 600px) {
+      .era-events {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <frhd-sidebar active="eras" root=".."></frhd-sidebar>
+
+  <div id="main">
+    <frhd-topbar page="FRHD Eras"></frhd-topbar>
+
+    <main id="page-content">
+
+      <h1 class="page-title">FRHD Eras</h1>
+
+      <div class="page-body">
+
+        <ol class="era-list">
+
+          <li class="era" style="--era-color: #6aa84f;">
+            <h2 class="tl-month">Early Days</h2>
+            <p class="era-dates">Dec 5th, 2013 → Feb 5th, 2014</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Official release of FRHD</div>
+              <div class="era-event"><span class="era-label">End</span>Release of the FRHD Editor</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #b87333;">
+            <h2 class="tl-month">Bronze Era</h2>
+            <p class="era-dates">Feb 5th, 2014 → Dec 23rd, 2014</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Release of the FRHD Editor</div>
+              <div class="era-event"><span class="era-label">End</span>Start of Remix Contest 3</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #9aa0a6;">
+            <h2 class="tl-month">Silver Era</h2>
+            <p class="era-dates">Dec 23rd, 2014 → Dec 11th, 2015</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Start of Remix Contest 3</div>
+              <div class="era-event"><span class="era-label">End</span>Start of Remix Contest 4 + Stig becomes Forum Moderator</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #d4a017;">
+            <h2 class="tl-month">Golden Era</h2>
+            <p class="era-dates">Dec 11th, 2015 → May 18th, 2017</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Start of Remix Contest 4 + Stig becomes Forum Moderator</div>
+              <div class="era-event"><span class="era-label">End</span>FRHD President</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #4a4a4a;">
+            <h2 class="tl-month">Dark Era</h2>
+            <p class="era-dates">May 18th, 2017 → Sep 23rd, 2018</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>FRHD President</div>
+              <div class="era-event"><span class="era-label">End</span>Start of Remix Contest 7</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #3d85c6;">
+            <h2 class="tl-month">New Era</h2>
+            <p class="era-dates">Sep 23rd, 2018 → Jun 29th, 2019</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Start of Remix Contest 7</div>
+              <div class="era-event"><span class="era-label">End</span>New playerbase joining</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #e69138;">
+            <h2 class="tl-month">The Revival</h2>
+            <p class="era-dates">Jun 29th, 2019 → Mar 30th, 2021</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>New playerbase joining</div>
+              <div class="era-event"><span class="era-label">End</span>Char leaves Kano</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #a64d79;">
+            <h2 class="tl-month">Reformative Years</h2>
+            <p class="era-dates">Mar 30th, 2021 → Jul 7th, 2024</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Char leaves Kano</div>
+              <div class="era-event"><span class="era-label">End</span>Release of track editor 1.1</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #8e7cc3;">
+            <h2 class="tl-month">The Next Generation</h2>
+            <p class="era-dates">Jul 7th, 2024 → Nov 25th, 2025</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Release of track editor 1.1</div>
+              <div class="era-event"><span class="era-label">End</span>Release of freerider.app forums</div>
+            </div>
+          </li>
+
+          <li class="era" style="--era-color: #16a085;">
+            <h2 class="tl-month">The Innovation Era <span class="era-present">Current</span></h2>
+            <p class="era-dates">Nov 25th, 2025 → Present</p>
+            <div class="era-events">
+              <div class="era-event"><span class="era-label">Start</span>Release of freerider.app forums</div>
+              <div class="era-event"><span class="era-label">End</span>Present</div>
+            </div>
+          </li>
+
+        </ol>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../components/frhd-sidebar.js"></script>
+  <script src="../components/frhd-topbar.js"></script>
+
+</body>
+</html>
