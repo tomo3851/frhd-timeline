@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistics - FRHD timeline</title>
+
+  <link rel="stylesheet" href="../assets/base.css" />
+  <link rel="stylesheet" href="../assets/sidebar.css" />
+  <link rel="stylesheet" href="../assets/topbar.css" />
+  <link rel="stylesheet" href="../assets/page.css" />
+  <link rel="stylesheet" href="../timeline/assets/timeline.css" />
+
+  <style>
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .stats-table th,
+    .stats-table td {
+      padding: 0.6rem 0.9rem;
+      text-align: right;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+    }
+
+    .stats-table thead th {
+      font-weight: 700;
+      background: rgba(128, 128, 128, 0.15);
+      border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+    }
+
+    .stats-table th:first-child {
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .stats-table tbody tr:hover {
+      background: rgba(128, 128, 128, 0.08);
+    }
+
+    .stats-table tfoot th,
+    .stats-table tfoot td {
+      font-weight: 700;
+      background: rgba(128, 128, 128, 0.15);
+      border-top: 2px solid rgba(128, 128, 128, 0.4);
+      border-bottom: none;
+    }
+
+    .stats-note {
+      margin-top: 0.75rem;
+    }
+
+    .stats-list {
+      margin: 0 0 1rem;
+      padding-left: 1.25rem;
+    }
+
+    .stats-list li {
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <frhd-sidebar active="statistics" root=".."></frhd-sidebar>
+
+  <div id="main">
+    <frhd-topbar page="Statistics"></frhd-topbar>
+
+    <main id="page-content">
+
+      <h1 class="page-title">Statistics</h1>
+
+      <div class="page-body">
+
+        <h2 class="tl-month">Timeline Statistics</h2>
+
+        <div class="table-wrap">
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Words</th>
+                <th scope="col">Characters</th>
+                <th scope="col">Pages</th>
+                <th scope="col">Dated entries</th>
+                <th scope="col">Contributions</th>
+                <th scope="col">Words per entry</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">2013</th>
+              <td>460</td>
+              <td>3,691</td>
+              <td>2</td>
+              <td>22</td>
+              <td>1</td>
+              <td>20.9</td>
+            </tr>
+            <tr>
+              <th scope="row">2014</th>
+              <td>1,906</td>
+              <td>13,686</td>
+              <td>6</td>
+              <td>111</td>
+              <td>13</td>
+              <td>17.2</td>
+            </tr>
+            <tr>
+              <th scope="row">2015</th>
+              <td>2,372</td>
+              <td>17,268</td>
+              <td>7</td>
+              <td>132</td>
+              <td>53</td>
+              <td>18.0</td>
+            </tr>
+            <tr>
+              <th scope="row">2016</th>
+              <td>2,621</td>
+              <td>18,572</td>
+              <td>7</td>
+              <td>137</td>
+              <td>68</td>
+              <td>19.1</td>
+            </tr>
+            <tr>
+              <th scope="row">2017</th>
+              <td>2,579</td>
+              <td>18,347</td>
+              <td>7</td>
+              <td>145</td>
+              <td>45</td>
+              <td>17.8</td>
+            </tr>
+            <tr>
+              <th scope="row">2018</th>
+              <td>1,598</td>
+              <td>13,582</td>
+              <td>5</td>
+              <td>105</td>
+              <td>14</td>
+              <td>15.2</td>
+            </tr>
+            <tr>
+              <th scope="row">2019</th>
+              <td>2,794</td>
+              <td>21,009</td>
+              <td>8</td>
+              <td>154</td>
+              <td>28</td>
+              <td>18.1</td>
+            </tr>
+            <tr>
+              <th scope="row">2020</th>
+              <td>4,515</td>
+              <td>33,030</td>
+              <td>12</td>
+              <td>237</td>
+              <td>106</td>
+              <td>19.1</td>
+            </tr>
+            <tr>
+              <th scope="row">2021</th>
+              <td>4,207</td>
+              <td>29,428</td>
+              <td>11</td>
+              <td>244</td>
+              <td>54</td>
+              <td>17.2</td>
+            </tr>
+            <tr>
+              <th scope="row">2022</th>
+              <td>2,691</td>
+              <td>20,786</td>
+              <td>7</td>
+              <td>127</td>
+              <td>31</td>
+              <td>21.2</td>
+            </tr>
+            <tr>
+              <th scope="row">2023</th>
+              <td>3,548</td>
+              <td>26,801</td>
+              <td>9</td>
+              <td>150</td>
+              <td>44</td>
+              <td>23.7</td>
+            </tr>
+            <tr>
+              <th scope="row">2024</th>
+              <td>3,188</td>
+              <td>26,199</td>
+              <td>9</td>
+              <td>120</td>
+              <td>8</td>
+              <td>26.6</td>
+            </tr>
+            <tr>
+              <th scope="row">2025</th>
+              <td>2,914</td>
+              <td>23,841</td>
+              <td>8</td>
+              <td>107</td>
+              <td>3</td>
+              <td>27.2</td>
+            </tr>
+            <tr>
+              <th scope="row">2026</th>
+              <td>2,357</td>
+              <td>18,880</td>
+              <td>7</td>
+              <td>79</td>
+              <td>0</td>
+              <td>29.8</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>37,750</td>
+              <td>285,120</td>
+              <td>105</td>
+              <td>1,870</td>
+              <td>468*</td>
+              <td>20.2</td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <p class="stats-note"><em>*Number is very likely inaccurate. Also not including Pie42's feature dates for the first featured tracks (see 09-18/12/2014 entry)</em></p>
+
+        <h2 class="tl-month">All versions of the Timeline</h2>
+        <ul class="stats-list">
+          <li><a href="https://community.freeriderhd.com/threads/9016/" target="_blank" rel="noopener"><strong>Old FRHD Timeline</strong></a> by <a href="https://community.freeriderhd.com/members/cctvcctvcctv.15447/" target="_blank" rel="noopener"><strong>cctvcctvcctv</strong></a></li>
+          <li><a href="https://docs.google.com/document/d/1VLjLnd0CjgNiCygnTjLecf9UF82SkO9SiFSAAaQO5zo" target="_blank" rel="noopener"><strong>FRHD Timeline 2013-2025 (Forum)</strong></a> by <a href="https://community.freeriderhd.com/members/tplacella.24439/" target="_blank" rel="noopener"><strong>TPlacella</strong></a></li>
+          <li><a href="https://docs.google.com/document/d/1VLjLnd0CjgNiCygnTjLecf9UF82SkO9SiFSAAaQO5zo" target="_blank" rel="noopener"><strong>FRHD Timeline 2013-2026 (Google Doc)</strong></a> by <a href="https://community.freeriderhd.com/members/tplacella.24439/" target="_blank" rel="noopener"><strong>TPlacella</strong></a></li>
+          <li><a href="https://github.com/tomo3851/frhd-timeline" target="_blank" rel="noopener"><strong>FRHD Timeline (GitHub)</strong></a> by <a href="https://community.freeriderhd.com/members/tplacella.24439/" target="_blank" rel="noopener"><strong>TPlacella</strong></a> with help from <a href="https://www.freeriderhd.com/u/protvod" target="_blank" rel="noopener"><strong>Protvod</strong></a></li>
+        </ul>
+
+        <h2 class="tl-month">TPlacella’s Time Statistics</h2>
+        <ul class="stats-list">
+          <li>200 hours spent making the timeline from May 2024 to February 2025</li>
+          <li>100 hours spent adding new entries to the timeline from February 2025</li>
+          <li>30 hours spent working on the Google Doc version from November 2025 to February 2026</li>
+          <li>20 hours spent creating this GitHub website from February 2026</li>
+        </ul>
+
+        <h2 class="tl-month">Credits</h2>
+        <ul class="stats-list">
+          <li><a href="https://community.freeriderhd.com/members/cctvcctvcctv.15447/" target="_blank" rel="noopener"><strong>cctvcctvcctv</strong></a> – Creator of the original timeline in 2018 with dates between 2013 and 2021</li>
+          <li><a href="https://community.freeriderhd.com/members/pie42.15046/" target="_blank" rel="noopener"><strong>Pie42</strong></a> and <a href="https://community.freeriderhd.com/members/dantexpress.22362/" target="_blank" rel="noopener"><strong>dantexpress</strong></a> – Large number of featured track dates</li>
+          <li><a href="https://community.freeriderhd.com/members/elibloodthirst.24/" target="_blank" rel="noopener"><strong>Elibloodthirst</strong></a> – Contributed a large variety of entries</li>
+          <li><a href="https://community.freeriderhd.com/members/totoca12.1098/" target="_blank" rel="noopener"><strong>Totoca12</strong></a> – Pinning the second Timeline on forums and helping with dates</li>
+          <li><a href="https://community.freeriderhd.com/members/volund.6723/" target="_blank" rel="noopener"><strong>Volund</strong></a>, <a href="https://community.freeriderhd.com/members/eryp.10986/" target="_blank" rel="noopener"><strong>Eryp</strong></a>, <a href="https://community.freeriderhd.com/members/ness.1735/" target="_blank" rel="noopener"><strong>Ness</strong></a>, <a href="https://community.freeriderhd.com/members/tubiek.19645/" target="_blank" rel="noopener"><strong>Tubiek</strong></a> and <a href="https://community.freeriderhd.com/members/cerasium.21850/" target="_blank" rel="noopener"><strong>Cerasium</strong></a> – Other major contributors</li>
+          <li><a href="https://community.freeriderhd.com/members/protvod.28423/" target="_blank" rel="noopener"><strong>Protvod</strong></a> - Helped create the GitHub website</li>
+        </ul>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../components/frhd-sidebar.js"></script>
+  <script src="../components/frhd-topbar.js"></script>
+
+</body>
+</html>
