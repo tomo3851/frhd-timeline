@@ -5,6 +5,13 @@
  * This component also owns the hamburger ↔ sidebar toggle logic.
  */
 
+(function () {
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.href = new URL('../assets/favicon.png', document.currentScript.src).href;
+  document.head.appendChild(link);
+})();
+
 class FrhdTopbar extends HTMLElement {
   connectedCallback() {
     const page = this.getAttribute('page') ?? '';
